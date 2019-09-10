@@ -18,12 +18,36 @@ namespace AlbumMan
             
         }
 
-        public Photo DisplayedPhoto
+        public Image Image
         {
+            set => pictureBoxPhoto.Image = value;
+        }
+
+        public string Title
+        {
+            get => textBoxTitle.Text;
+            set => textBoxTitle.Text = value;
+        }
+
+        public string Description
+        {
+            get => textBoxDescription.Text;
+            set => textBoxDescription.Text = value;
+        }
+
+        public bool Marked
+        {
+            get => checkBoxMark.Checked;
             set
             {
-                pictureBoxPhoto.Image = value.Image;
+                checkBoxMark.Checked = value;
+                checkBoxMark.Text = value ? "Marked" : "Unmarked";
             }
+        }
+
+        private void CheckBoxMark_CheckedChanged(object sender, EventArgs e)
+        {
+            Marked = Marked; // dirty hack
         }
     }
 }

@@ -60,7 +60,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer1.Size = new System.Drawing.Size(985, 794);
-            this.splitContainer1.SplitterDistance = 328;
+            this.splitContainer1.SplitterDistance = 700;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -72,7 +72,7 @@
             this.pictureBoxPhoto.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-            this.pictureBoxPhoto.Size = new System.Drawing.Size(326, 792);
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(698, 792);
             this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPhoto.TabIndex = 0;
             this.pictureBoxPhoto.TabStop = false;
@@ -100,7 +100,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 277F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(648, 792);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 792);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelTitle
@@ -121,7 +121,7 @@
             this.textBoxTitle.Location = new System.Drawing.Point(6, 105);
             this.textBoxTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 18);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(636, 45);
+            this.textBoxTitle.Size = new System.Drawing.Size(264, 45);
             this.textBoxTitle.TabIndex = 1;
             // 
             // labelDescription
@@ -143,7 +143,7 @@
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(636, 265);
+            this.textBoxDescription.Size = new System.Drawing.Size(264, 265);
             this.textBoxDescription.TabIndex = 3;
             // 
             // checkBoxMark
@@ -155,11 +155,12 @@
             this.checkBoxMark.Location = new System.Drawing.Point(3, 3);
             this.checkBoxMark.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.checkBoxMark.Name = "checkBoxMark";
-            this.checkBoxMark.Size = new System.Drawing.Size(642, 48);
+            this.checkBoxMark.Size = new System.Drawing.Size(270, 48);
             this.checkBoxMark.TabIndex = 4;
             this.checkBoxMark.Text = "Unmarked";
             this.checkBoxMark.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBoxMark.UseVisualStyleBackColor = true;
+            this.checkBoxMark.CheckedChanged += new System.EventHandler(this.CheckBoxMark_CheckedChanged);
             // 
             // AlbumPhotoPanel
             // 

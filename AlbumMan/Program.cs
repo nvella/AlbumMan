@@ -28,7 +28,7 @@ namespace AlbumMan
             {
                 _currentAlbum = value;
                 _mainForm.HandleAlbumChange(value);
-                CurrentPhoto = null;
+                CurrentPhoto = value.Photos.Count > 0 ? value.Photos[0] : null;
             }
         }
 
@@ -41,6 +41,14 @@ namespace AlbumMan
                 _currentPhoto = value;
                 _mainForm.HandlePhotoChange(value);
             }
+        }
+
+        public void NextPhoto()
+        {
+            var i = CurrentAlbum.Photos.IndexOf(CurrentPhoto);
+            if (i < 0) return;
+            i = (i + 1) % CurrentAlbum.Photos.Count;
+            CurrentPhoto = CurrentAlbum.Photos[i];
         }
 
         /// <summary>

@@ -46,12 +46,15 @@ namespace AlbumMan
                     if (item.PhotoInstance == photo && !item.Selected)
                     {
                         listBoxPhotos.SelectedItems.Clear();
+                        item.Selected = true;
                         break;
                     }
                 }
 
                 // Update the AlbumPhotoPanel
-                albumPhotoPanel1.DisplayedPhoto = photo;
+                albumPhotoPanel.Title = photo.Title;
+                albumPhotoPanel.Description = photo.Description;
+                albumPhotoPanel.Image = photo.Image;
             }
         }
 
@@ -86,6 +89,11 @@ namespace AlbumMan
             {
                 _program.CurrentPhoto = null;
             }
+        }
+
+        private void SaveAndNextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _program.NextPhoto();
         }
     }
 }
