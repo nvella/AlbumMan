@@ -43,13 +43,39 @@ namespace AlbumMan
             }
         }
 
+        public void PreviousPhoto()
+        {
+            if (CurrentAlbum == null) return;
+
+            var i = CurrentAlbum.Photos.IndexOf(CurrentPhoto);
+            if (i < 0) return;
+            i = i == 0 ? CurrentAlbum.Photos.Count - 1 : i - 1;
+            CurrentPhoto = CurrentAlbum.Photos[i];
+        }
+
         public void NextPhoto()
         {
+            if (CurrentAlbum == null) return;
+
             var i = CurrentAlbum.Photos.IndexOf(CurrentPhoto);
             if (i < 0) return;
             i = (i + 1) % CurrentAlbum.Photos.Count;
             CurrentPhoto = CurrentAlbum.Photos[i];
         }
+
+        public void ConfirmPhotoData()
+        {
+            if (CurrentPhoto == null) return;
+
+            CurrentPhoto.Title = _mainForm.PhotoPanel.Title;
+            CurrentPhoto.Description = _mainForm.PhotoPanel.Description;
+            CurrentPhoto.Marked = _mainForm.PhotoPanel.Marked;
+
+            _mainForm.UpdatePhotoList();
+        }
+
+        public void ToggleMark()
+            => _mainForm.PhotoPanel.Marked = !_mainForm.PhotoPanel.Marked;
 
         /// <summary>
         /// The main entry point for the application.

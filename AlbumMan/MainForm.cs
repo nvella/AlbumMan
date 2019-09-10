@@ -15,6 +15,8 @@ namespace AlbumMan
     {
         private Program _program;
 
+        public AlbumPhotoPanel PhotoPanel { get => albumPhotoPanel1; }
+
         public MainForm(Program program)
         {
             _program = program;
@@ -52,9 +54,13 @@ namespace AlbumMan
                 }
 
                 // Update the AlbumPhotoPanel
-                albumPhotoPanel.Title = photo.Title;
-                albumPhotoPanel.Description = photo.Description;
-                albumPhotoPanel.Image = photo.Image;
+                PhotoPanel.Title = photo.Title;
+                PhotoPanel.Description = photo.Description;
+                PhotoPanel.Image = photo.Image;
+                PhotoPanel.Marked = photo.Marked;
+
+                // Select the Title text box
+                PhotoPanel.SelectTitle();
             }
         }
 
@@ -62,6 +68,11 @@ namespace AlbumMan
         {
             listBoxPhotos.Items.Clear();
             listBoxPhotos.Items.AddRange(album.Photos.Select(photo => photo.ListViewItem).ToArray());
+        }
+
+        public void UpdatePhotoList()
+        {
+            foreach(ListViewItemPhoto item in listBoxPhotos.Items) item.Update();
         }
 
         private void OpenAlbumToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +103,36 @@ namespace AlbumMan
         }
 
         private void SaveAndNextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _program.ConfirmPhotoData();
+            _program.NextPhoto();
+        }
+
+        private void ToggleMarkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _program.ToggleMark();
+        }
+
+        private void ToolStripButtonOpen_Click(object sender, EventArgs e)
+            => OpenAlbumToolStripMenuItem_Click(sender, e);
+
+        private void ToolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            // TODO point to save menu item handler
+        }
+
+        private void ToolStripButtonPrev_Click(object sender, EventArgs e)
+            => PreviousToolStripMenuItem_Click(sender, e);
+
+        private void ToolStripButtonNext_Click(object sender, EventArgs e)
+            => NextToolStripMenuItem_Click(sender, e);
+
+        private void PreviousToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _program.PreviousPhoto();
+        }
+
+        private void NextToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _program.NextPhoto();
         }

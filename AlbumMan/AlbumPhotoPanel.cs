@@ -42,9 +42,15 @@ namespace AlbumMan
             {
                 checkBoxMark.Checked = value;
                 checkBoxMark.Text = value ? "Marked" : "Unmarked";
+                checkBoxMark.BackColor = value ? Color.LightGreen : Color.LightCoral;
             }
         }
 
+        public void SelectTitle()
+        {
+            textBoxTitle.SelectAll();
+            textBoxTitle.Focus();
+        }
         private void CheckBoxMark_CheckedChanged(object sender, EventArgs e)
         {
             Marked = Marked; // dirty hack

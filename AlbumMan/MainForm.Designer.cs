@@ -32,21 +32,25 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openAlbumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAlbumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.photoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAndNextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toggleMarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listBoxPhotos = new System.Windows.Forms.ListView();
             this.titleColHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descriptionColHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.albumPhotoPanel1 = new AlbumMan.AlbumPhotoPanel();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.albumPhotoPanel = new AlbumMan.AlbumPhotoPanel();
-            this.photoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAndNextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.previousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toggleMarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonPrev = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonNext = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -66,7 +70,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.photoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 38);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1467, 38);
             this.menuStrip1.TabIndex = 0;
@@ -76,6 +80,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openAlbumToolStripMenuItem,
+            this.saveAlbumToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 34);
@@ -83,6 +88,7 @@
             // 
             // openAlbumToolStripMenuItem
             // 
+            this.openAlbumToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.folder;
             this.openAlbumToolStripMenuItem.Name = "openAlbumToolStripMenuItem";
             this.openAlbumToolStripMenuItem.ShortcutKeyDisplayString = "";
             this.openAlbumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -90,12 +96,66 @@
             this.openAlbumToolStripMenuItem.Text = "Open Album";
             this.openAlbumToolStripMenuItem.Click += new System.EventHandler(this.OpenAlbumToolStripMenuItem_Click);
             // 
+            // saveAlbumToolStripMenuItem
+            // 
+            this.saveAlbumToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAlbumToolStripMenuItem.Image")));
+            this.saveAlbumToolStripMenuItem.Name = "saveAlbumToolStripMenuItem";
+            this.saveAlbumToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveAlbumToolStripMenuItem.Size = new System.Drawing.Size(324, 40);
+            this.saveAlbumToolStripMenuItem.Text = "Save Album";
+            // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.door_out;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(324, 40);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // photoToolStripMenuItem
+            // 
+            this.photoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.previousToolStripMenuItem,
+            this.nextToolStripMenuItem,
+            this.saveAndNextToolStripMenuItem,
+            this.toggleMarkToolStripMenuItem});
+            this.photoToolStripMenuItem.Name = "photoToolStripMenuItem";
+            this.photoToolStripMenuItem.Size = new System.Drawing.Size(86, 34);
+            this.photoToolStripMenuItem.Text = "Photo";
+            // 
+            // previousToolStripMenuItem
+            // 
+            this.previousToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.arrow_left;
+            this.previousToolStripMenuItem.Name = "previousToolStripMenuItem";
+            this.previousToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
+            this.previousToolStripMenuItem.Text = "Previous";
+            this.previousToolStripMenuItem.Click += new System.EventHandler(this.PreviousToolStripMenuItem_Click);
+            // 
+            // nextToolStripMenuItem
+            // 
+            this.nextToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.arrow_right;
+            this.nextToolStripMenuItem.Name = "nextToolStripMenuItem";
+            this.nextToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
+            this.nextToolStripMenuItem.Text = "Next";
+            this.nextToolStripMenuItem.Click += new System.EventHandler(this.NextToolStripMenuItem_Click);
+            // 
+            // saveAndNextToolStripMenuItem
+            // 
+            this.saveAndNextToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.book_next;
+            this.saveAndNextToolStripMenuItem.Name = "saveAndNextToolStripMenuItem";
+            this.saveAndNextToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.saveAndNextToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
+            this.saveAndNextToolStripMenuItem.Text = "Confirm and Next";
+            this.saveAndNextToolStripMenuItem.Click += new System.EventHandler(this.SaveAndNextToolStripMenuItem_Click);
+            // 
+            // toggleMarkToolStripMenuItem
+            // 
+            this.toggleMarkToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.tick;
+            this.toggleMarkToolStripMenuItem.Name = "toggleMarkToolStripMenuItem";
+            this.toggleMarkToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            this.toggleMarkToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
+            this.toggleMarkToolStripMenuItem.Text = "Toggle Mark";
+            this.toggleMarkToolStripMenuItem.Click += new System.EventHandler(this.ToggleMarkToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -110,7 +170,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.albumPhotoPanel);
+            this.splitContainer1.Panel2.Controls.Add(this.albumPhotoPanel1);
             this.splitContainer1.Size = new System.Drawing.Size(1467, 755);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.SplitterWidth = 7;
@@ -141,6 +201,18 @@
             // 
             this.descriptionColHeader.Text = "Description";
             // 
+            // albumPhotoPanel1
+            // 
+            this.albumPhotoPanel1.Description = "";
+            this.albumPhotoPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.albumPhotoPanel1.Location = new System.Drawing.Point(0, 0);
+            this.albumPhotoPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.albumPhotoPanel1.Marked = false;
+            this.albumPhotoPanel1.Name = "albumPhotoPanel1";
+            this.albumPhotoPanel1.Size = new System.Drawing.Size(1260, 755);
+            this.albumPhotoPanel1.TabIndex = 0;
+            this.albumPhotoPanel1.Title = "";
+            // 
             // toolStripContainer1
             // 
             // 
@@ -168,81 +240,63 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripButtonOpen,
+            this.toolStripButtonSave,
+            this.toolStripSeparator1,
+            this.toolStripButtonPrev,
+            this.toolStripButtonNext});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 38);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1467, 38);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 1;
             // 
-            // toolStripButton1
+            // toolStripButtonOpen
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(40, 32);
-            this.toolStripButton1.Text = "Open Album";
+            this.toolStripButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonOpen.Image = global::AlbumMan.Properties.Resources.folder;
+            this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonOpen.Name = "toolStripButtonOpen";
+            this.toolStripButtonOpen.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonOpen.Text = "Open Album";
+            this.toolStripButtonOpen.ToolTipText = "Open Album (Ctrl+O)";
+            this.toolStripButtonOpen.Click += new System.EventHandler(this.ToolStripButtonOpen_Click);
             // 
-            // toolStripButton2
+            // toolStripButtonSave
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(40, 32);
-            this.toolStripButton2.Text = "Save";
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSave.Image = global::AlbumMan.Properties.Resources.disk_multiple;
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonSave.Text = "Save Album";
+            this.toolStripButtonSave.ToolTipText = "Save Album (Ctrl+S)";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.ToolStripButtonSave_Click);
             // 
-            // albumPhotoPanel
+            // toolStripSeparator1
             // 
-            this.albumPhotoPanel.Description = "";
-            this.albumPhotoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.albumPhotoPanel.Location = new System.Drawing.Point(0, 0);
-            this.albumPhotoPanel.Margin = new System.Windows.Forms.Padding(11);
-            this.albumPhotoPanel.Marked = false;
-            this.albumPhotoPanel.Name = "albumPhotoPanel";
-            this.albumPhotoPanel.Size = new System.Drawing.Size(1260, 755);
-            this.albumPhotoPanel.TabIndex = 0;
-            this.albumPhotoPanel.Title = "";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
-            // photoToolStripMenuItem
+            // toolStripButtonPrev
             // 
-            this.photoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.previousToolStripMenuItem,
-            this.nextToolStripMenuItem,
-            this.saveAndNextToolStripMenuItem,
-            this.toggleMarkToolStripMenuItem});
-            this.photoToolStripMenuItem.Name = "photoToolStripMenuItem";
-            this.photoToolStripMenuItem.Size = new System.Drawing.Size(86, 34);
-            this.photoToolStripMenuItem.Text = "Photo";
+            this.toolStripButtonPrev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPrev.Image = global::AlbumMan.Properties.Resources.arrow_left;
+            this.toolStripButtonPrev.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPrev.Name = "toolStripButtonPrev";
+            this.toolStripButtonPrev.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonPrev.Text = "Previous";
+            this.toolStripButtonPrev.Click += new System.EventHandler(this.ToolStripButtonPrev_Click);
             // 
-            // saveAndNextToolStripMenuItem
+            // toolStripButtonNext
             // 
-            this.saveAndNextToolStripMenuItem.Name = "saveAndNextToolStripMenuItem";
-            this.saveAndNextToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.saveAndNextToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
-            this.saveAndNextToolStripMenuItem.Text = "Confirm and Next";
-            this.saveAndNextToolStripMenuItem.Click += new System.EventHandler(this.SaveAndNextToolStripMenuItem_Click);
-            // 
-            // previousToolStripMenuItem
-            // 
-            this.previousToolStripMenuItem.Name = "previousToolStripMenuItem";
-            this.previousToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
-            this.previousToolStripMenuItem.Text = "Previous";
-            // 
-            // nextToolStripMenuItem
-            // 
-            this.nextToolStripMenuItem.Name = "nextToolStripMenuItem";
-            this.nextToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
-            this.nextToolStripMenuItem.Text = "Next";
-            // 
-            // toggleMarkToolStripMenuItem
-            // 
-            this.toggleMarkToolStripMenuItem.Name = "toggleMarkToolStripMenuItem";
-            this.toggleMarkToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.toggleMarkToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
-            this.toggleMarkToolStripMenuItem.Text = "Toggle Mark";
+            this.toolStripButtonNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonNext.Image = global::AlbumMan.Properties.Resources.arrow_right;
+            this.toolStripButtonNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonNext.Name = "toolStripButtonNext";
+            this.toolStripButtonNext.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonNext.Text = "Next";
+            this.toolStripButtonNext.Click += new System.EventHandler(this.ToolStripButtonNext_Click);
             // 
             // MainForm
             // 
@@ -282,16 +336,20 @@
         private System.Windows.Forms.ListView listBoxPhotos;
         private System.Windows.Forms.ColumnHeader titleColHeader;
         private System.Windows.Forms.ColumnHeader descriptionColHeader;
-        private AlbumPhotoPanel albumPhotoPanel;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonOpen;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripMenuItem photoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem previousToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAndNextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toggleMarkToolStripMenuItem;
+        private AlbumPhotoPanel albumPhotoPanel1;
+        private System.Windows.Forms.ToolStripMenuItem saveAlbumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonPrev;
+        private System.Windows.Forms.ToolStripButton toolStripButtonNext;
     }
 }
 

@@ -14,6 +14,7 @@ namespace AlbumMan
         public string ImagePath { get; private set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public bool Marked { get; set; }
 
         private Image _image = null;
         public Image Image {
@@ -43,9 +44,15 @@ namespace AlbumMan
         public ListViewItemPhoto(Photo photo) : base()
         {
             PhotoInstance = photo;
+            Update();
+        }
 
-            Text = photo.Title;
-            SubItems.Add(photo.Description);
+        public void Update()
+        {
+            SubItems.Clear();
+
+            Text = PhotoInstance.Title;
+            SubItems.Add(PhotoInstance.Description);
         }
     }
 }
