@@ -20,6 +20,7 @@ namespace AlbumMan
             _program = program;
 
             InitializeComponent();
+
         }
 
         public void HandleAlbumChange(Album album)
@@ -33,7 +34,25 @@ namespace AlbumMan
 
         public void HandlePhotoChange(Photo photo)
         {
-            if (photo == null) MessageBox.Show("Nah");
+            if(photo == null && listBoxPhotos.SelectedItems.Count > 0)
+            {
+                // If a photo is being unselected, clear the list box selection
+                listBoxPhotos.SelectedItems.Clear();
+            } else if(photo != null)
+            {
+                // Find the photo and select it, if it's not already selected
+                foreach (ListViewItemPhoto item in listBoxPhotos.Items)
+                {
+                    if (item.PhotoInstance == photo && !item.Selected)
+                    {
+                        listBoxPhotos.SelectedItems.Clear();
+                        break;
+                    }
+                }
+
+                // Update the AlbumPhotoPanel
+                albumPhotoPanel1.DisplayedPhoto = photo;
+            }
         }
 
         private void LoadPhotosList(Album album)

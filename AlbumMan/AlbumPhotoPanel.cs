@@ -15,6 +15,15 @@ namespace AlbumMan
         public AlbumPhotoPanel()
         {
             InitializeComponent();
+            
+        }
+
+        public Photo DisplayedPhoto
+        {
+            set
+            {
+                pictureBoxPhoto.Image = value.Image;
+            }
         }
     }
 }

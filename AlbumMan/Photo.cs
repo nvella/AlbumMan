@@ -5,15 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace AlbumMan
 {
     public class Photo
     {
         public string ImagePath { get; private set; }
-
         public string Title { get; set; }
         public string Description { get; set; }
+
+        private Image _image = null;
+        public Image Image {
+            get
+            {
+                if (_image == null) _image = Image.FromFile(ImagePath);
+                return _image;
+             }
+        }
 
         public Photo(string path)
         {
