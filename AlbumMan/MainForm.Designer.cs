@@ -43,7 +43,6 @@
             this.listBoxPhotos = new System.Windows.Forms.ListView();
             this.titleColHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.descriptionColHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.albumPhotoPanel1 = new AlbumMan.AlbumPhotoPanel();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonOpen = new System.Windows.Forms.ToolStripButton();
@@ -51,6 +50,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonPrev = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonNext = new System.Windows.Forms.ToolStripButton();
+            this.albumPhotoPanel1 = new AlbumMan.AlbumPhotoPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -65,12 +65,11 @@
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.photoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 38);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1467, 38);
             this.menuStrip1.TabIndex = 0;
@@ -127,6 +126,7 @@
             // 
             this.previousToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.arrow_left;
             this.previousToolStripMenuItem.Name = "previousToolStripMenuItem";
+            this.previousToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.previousToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
             this.previousToolStripMenuItem.Text = "Previous";
             this.previousToolStripMenuItem.Click += new System.EventHandler(this.PreviousToolStripMenuItem_Click);
@@ -135,6 +135,7 @@
             // 
             this.nextToolStripMenuItem.Image = global::AlbumMan.Properties.Resources.arrow_right;
             this.nextToolStripMenuItem.Name = "nextToolStripMenuItem";
+            this.nextToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.nextToolStripMenuItem.Size = new System.Drawing.Size(330, 40);
             this.nextToolStripMenuItem.Text = "Next";
             this.nextToolStripMenuItem.Click += new System.EventHandler(this.NextToolStripMenuItem_Click);
@@ -201,18 +202,6 @@
             // 
             this.descriptionColHeader.Text = "Description";
             // 
-            // albumPhotoPanel1
-            // 
-            this.albumPhotoPanel1.Description = "";
-            this.albumPhotoPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.albumPhotoPanel1.Location = new System.Drawing.Point(0, 0);
-            this.albumPhotoPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.albumPhotoPanel1.Marked = false;
-            this.albumPhotoPanel1.Name = "albumPhotoPanel1";
-            this.albumPhotoPanel1.Size = new System.Drawing.Size(1260, 755);
-            this.albumPhotoPanel1.TabIndex = 0;
-            this.albumPhotoPanel1.Title = "";
-            // 
             // toolStripContainer1
             // 
             // 
@@ -232,8 +221,8 @@
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
             // toolStrip1
             // 
@@ -245,7 +234,7 @@
             this.toolStripSeparator1,
             this.toolStripButtonPrev,
             this.toolStripButtonNext});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 38);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1467, 38);
             this.toolStrip1.Stretch = true;
@@ -285,7 +274,7 @@
             this.toolStripButtonPrev.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonPrev.Name = "toolStripButtonPrev";
             this.toolStripButtonPrev.Size = new System.Drawing.Size(40, 32);
-            this.toolStripButtonPrev.Text = "Previous";
+            this.toolStripButtonPrev.Text = "Previous (F3)";
             this.toolStripButtonPrev.Click += new System.EventHandler(this.ToolStripButtonPrev_Click);
             // 
             // toolStripButtonNext
@@ -295,8 +284,20 @@
             this.toolStripButtonNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNext.Name = "toolStripButtonNext";
             this.toolStripButtonNext.Size = new System.Drawing.Size(40, 32);
-            this.toolStripButtonNext.Text = "Next";
+            this.toolStripButtonNext.Text = "Next (F4)";
             this.toolStripButtonNext.Click += new System.EventHandler(this.ToolStripButtonNext_Click);
+            // 
+            // albumPhotoPanel1
+            // 
+            this.albumPhotoPanel1.Description = "";
+            this.albumPhotoPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.albumPhotoPanel1.Location = new System.Drawing.Point(0, 0);
+            this.albumPhotoPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.albumPhotoPanel1.Marked = false;
+            this.albumPhotoPanel1.Name = "albumPhotoPanel1";
+            this.albumPhotoPanel1.Size = new System.Drawing.Size(1260, 755);
+            this.albumPhotoPanel1.TabIndex = 0;
+            this.albumPhotoPanel1.Title = "";
             // 
             // MainForm
             // 

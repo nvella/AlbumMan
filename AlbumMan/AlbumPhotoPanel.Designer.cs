@@ -114,11 +114,11 @@
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(6, 71);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(68, 37);
+            this.labelTitle.Size = new System.Drawing.Size(61, 32);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Title";
             // 
@@ -126,7 +126,7 @@
             // 
             this.textBoxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(6, 114);
+            this.textBoxTitle.Location = new System.Drawing.Point(6, 109);
             this.textBoxTitle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 18);
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.Size = new System.Drawing.Size(264, 45);
@@ -135,11 +135,11 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Font = new System.Drawing.Font("Segoe UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(6, 177);
+            this.labelDescription.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.Location = new System.Drawing.Point(6, 172);
             this.labelDescription.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(152, 37);
+            this.labelDescription.Size = new System.Drawing.Size(136, 32);
             this.labelDescription.TabIndex = 2;
             this.labelDescription.Text = "Description";
             // 
@@ -147,7 +147,7 @@
             // 
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescription.Location = new System.Drawing.Point(6, 220);
+            this.textBoxDescription.Location = new System.Drawing.Point(6, 210);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 6, 6, 20);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
@@ -178,7 +178,7 @@
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 531);
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 516);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(270, 35);
             this.dateTimePicker1.TabIndex = 5;
@@ -187,10 +187,10 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Font = new System.Drawing.Font("Segoe UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(3, 491);
+            this.labelDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDate.Location = new System.Drawing.Point(3, 481);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(73, 37);
+            this.labelDate.Size = new System.Drawing.Size(65, 32);
             this.labelDate.TabIndex = 6;
             this.labelDate.Text = "Date";
             // 
