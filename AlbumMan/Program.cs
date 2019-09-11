@@ -39,7 +39,7 @@ namespace AlbumMan
             set
             {
                 _currentPhoto = value;
-                _mainForm.HandlePhotoChange(value);
+                _mainForm.SelectPhoto(value);
             }
         }
 

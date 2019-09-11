@@ -34,7 +34,7 @@ namespace AlbumMan
             LoadPhotosList(album);
         }
 
-        public void HandlePhotoChange(Photo photo)
+        public void SelectPhoto(Photo photo)
         {
             if(photo == null && listBoxPhotos.SelectedItems.Count > 0)
             {
