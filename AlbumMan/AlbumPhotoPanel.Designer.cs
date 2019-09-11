@@ -38,6 +38,8 @@
             this.checkBoxMark = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelDate = new System.Windows.Forms.Label();
+            this.labelTags = new System.Windows.Forms.Label();
+            this.textBoxTags = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,11 +95,13 @@
             this.tableLayoutPanel1.Controls.Add(this.checkBoxMark, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.labelDate, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelTags, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxTags, 0, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -106,7 +110,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 277F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 792);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -179,6 +184,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(3, 516);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(270, 35);
             this.dateTimePicker1.TabIndex = 5;
@@ -193,6 +199,25 @@
             this.labelDate.Size = new System.Drawing.Size(65, 32);
             this.labelDate.TabIndex = 6;
             this.labelDate.Text = "Date";
+            // 
+            // labelTags
+            // 
+            this.labelTags.AutoSize = true;
+            this.labelTags.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTags.Location = new System.Drawing.Point(3, 561);
+            this.labelTags.Name = "labelTags";
+            this.labelTags.Size = new System.Drawing.Size(161, 64);
+            this.labelTags.TabIndex = 7;
+            this.labelTags.Text = "Tags (comma separated)";
+            // 
+            // textBoxTags
+            // 
+            this.textBoxTags.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxTags.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxTags.Location = new System.Drawing.Point(3, 628);
+            this.textBoxTags.Name = "textBoxTags";
+            this.textBoxTags.Size = new System.Drawing.Size(270, 35);
+            this.textBoxTags.TabIndex = 8;
             // 
             // AlbumPhotoPanel
             // 
@@ -226,5 +251,7 @@
         private System.Windows.Forms.CheckBox checkBoxMark;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.Label labelTags;
+        private System.Windows.Forms.TextBox textBoxTags;
     }
 }

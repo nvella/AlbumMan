@@ -65,13 +65,14 @@
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.photoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 38);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1467, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1467, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +83,7 @@
             this.saveAlbumToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 34);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 38);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openAlbumToolStripMenuItem
@@ -119,7 +120,7 @@
             this.saveAndNextToolStripMenuItem,
             this.toggleMarkToolStripMenuItem});
             this.photoToolStripMenuItem.Name = "photoToolStripMenuItem";
-            this.photoToolStripMenuItem.Size = new System.Drawing.Size(86, 34);
+            this.photoToolStripMenuItem.Size = new System.Drawing.Size(86, 38);
             this.photoToolStripMenuItem.Text = "Photo";
             // 
             // previousToolStripMenuItem
@@ -172,7 +173,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.albumPhotoPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1467, 755);
+            this.splitContainer1.Size = new System.Drawing.Size(1467, 745);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 1;
@@ -187,7 +188,7 @@
             this.listBoxPhotos.Location = new System.Drawing.Point(0, 0);
             this.listBoxPhotos.Margin = new System.Windows.Forms.Padding(6);
             this.listBoxPhotos.Name = "listBoxPhotos";
-            this.listBoxPhotos.Size = new System.Drawing.Size(200, 755);
+            this.listBoxPhotos.Size = new System.Drawing.Size(200, 745);
             this.listBoxPhotos.TabIndex = 0;
             this.listBoxPhotos.UseCompatibleStateImageBehavior = false;
             this.listBoxPhotos.View = System.Windows.Forms.View.Details;
@@ -210,7 +211,7 @@
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.splitContainer1);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(6);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1467, 755);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1467, 745);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(6);
@@ -221,8 +222,8 @@
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
             // toolStrip1
             // 
@@ -234,9 +235,9 @@
             this.toolStripSeparator1,
             this.toolStripButtonPrev,
             this.toolStripButtonNext});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 42);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1467, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1467, 44);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 1;
             // 
@@ -246,7 +247,7 @@
             this.toolStripButtonOpen.Image = global::AlbumMan.Properties.Resources.folder;
             this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonOpen.Name = "toolStripButtonOpen";
-            this.toolStripButtonOpen.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonOpen.Size = new System.Drawing.Size(40, 38);
             this.toolStripButtonOpen.Text = "Open Album";
             this.toolStripButtonOpen.ToolTipText = "Open Album (Ctrl+O)";
             this.toolStripButtonOpen.Click += new System.EventHandler(this.ToolStripButtonOpen_Click);
@@ -257,7 +258,7 @@
             this.toolStripButtonSave.Image = global::AlbumMan.Properties.Resources.disk_multiple;
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(40, 38);
             this.toolStripButtonSave.Text = "Save Album";
             this.toolStripButtonSave.ToolTipText = "Save Album (Ctrl+S)";
             this.toolStripButtonSave.Click += new System.EventHandler(this.ToolStripButtonSave_Click);
@@ -265,7 +266,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 44);
             // 
             // toolStripButtonPrev
             // 
@@ -273,7 +274,7 @@
             this.toolStripButtonPrev.Image = global::AlbumMan.Properties.Resources.arrow_left;
             this.toolStripButtonPrev.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonPrev.Name = "toolStripButtonPrev";
-            this.toolStripButtonPrev.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonPrev.Size = new System.Drawing.Size(40, 38);
             this.toolStripButtonPrev.Text = "Previous (F3)";
             this.toolStripButtonPrev.Click += new System.EventHandler(this.ToolStripButtonPrev_Click);
             // 
@@ -283,7 +284,7 @@
             this.toolStripButtonNext.Image = global::AlbumMan.Properties.Resources.arrow_right;
             this.toolStripButtonNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNext.Name = "toolStripButtonNext";
-            this.toolStripButtonNext.Size = new System.Drawing.Size(40, 32);
+            this.toolStripButtonNext.Size = new System.Drawing.Size(40, 38);
             this.toolStripButtonNext.Text = "Next (F4)";
             this.toolStripButtonNext.Click += new System.EventHandler(this.ToolStripButtonNext_Click);
             // 
@@ -295,7 +296,7 @@
             this.albumPhotoPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.albumPhotoPanel1.Marked = false;
             this.albumPhotoPanel1.Name = "albumPhotoPanel1";
-            this.albumPhotoPanel1.Size = new System.Drawing.Size(1260, 755);
+            this.albumPhotoPanel1.Size = new System.Drawing.Size(1260, 745);
             this.albumPhotoPanel1.TabIndex = 0;
             this.albumPhotoPanel1.Title = "";
             // 
