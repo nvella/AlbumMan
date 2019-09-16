@@ -46,6 +46,22 @@ namespace AlbumMan
             }
         }
 
+        public DateTime Date
+        {
+            get => dateTimePicker1.Value;
+            set => dateTimePicker1.Value = value;
+        }
+
+        public List<string> Tags
+        {
+            get
+            {
+                if (textBoxTags.Text.Trim().Length < 1) return new List<string>();
+                return textBoxTags.Text.Split(',').Select(tag => tag.Trim()).ToList();
+            }
+            set => textBoxTags.Text = String.Join(", ", value).TrimEnd(',', ' ');
+        }
+
         public void SelectTitle()
         {
             textBoxTitle.SelectAll();

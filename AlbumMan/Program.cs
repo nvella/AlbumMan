@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace AlbumMan
 {
     public class Program
     {
+        public static string PRODUCT_NAME = "AlbumMan";
+
         private MainForm _mainForm;
 
         public void Run()
@@ -70,12 +77,21 @@ namespace AlbumMan
             CurrentPhoto.Title = _mainForm.PhotoPanel.Title;
             CurrentPhoto.Description = _mainForm.PhotoPanel.Description;
             CurrentPhoto.Marked = _mainForm.PhotoPanel.Marked;
+            CurrentPhoto.Date = _mainForm.PhotoPanel.Date;
+            CurrentPhoto.Tags = _mainForm.PhotoPanel.Tags;
 
             _mainForm.UpdatePhotoList();
         }
 
         public void ToggleMark()
             => _mainForm.PhotoPanel.Marked = !_mainForm.PhotoPanel.Marked;
+
+        public void SaveAlbum()
+        {
+            if (CurrentAlbum == null) return;
+            CurrentAlbum.SaveMetadata();
+            MessageBox.Show("Album saved.", $"{PRODUCT_NAME}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
         /// <summary>
         /// The main entry point for the application.

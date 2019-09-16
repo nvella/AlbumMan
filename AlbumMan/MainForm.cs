@@ -22,13 +22,13 @@ namespace AlbumMan
             _program = program;
 
             InitializeComponent();
-
+            Text = $"{Program.PRODUCT_NAME}";
         }
 
         public void HandleAlbumChange(Album album)
         {
             // Set the window title
-            Text = $"AlbumMan - {album.Title}";
+            Text = $"{Program.PRODUCT_NAME} - {album.Title}";
 
             // Set the photo list
             LoadPhotosList(album);
@@ -58,6 +58,16 @@ namespace AlbumMan
                 PhotoPanel.Description = photo.Description;
                 PhotoPanel.Image = photo.Image;
                 PhotoPanel.Marked = photo.Marked;
+
+                if (photo.Date != null &&
+                    photo.Date > DateTime.MinValue &&
+                    photo.Date < DateTime.MaxValue)
+                    PhotoPanel.Date = photo.Date;
+                else
+                    PhotoPanel.Date = DateTime.Now;
+
+                PhotoPanel.Tags = photo.Tags;
+
 
                 // Select the Title text box
                 PhotoPanel.SelectTitle();
@@ -117,9 +127,7 @@ namespace AlbumMan
             => OpenAlbumToolStripMenuItem_Click(sender, e);
 
         private void ToolStripButtonSave_Click(object sender, EventArgs e)
-        {
-            // TODO point to save menu item handler
-        }
+            => SaveAlbumToolStripMenuItem_Click(sender, e);
 
         private void ToolStripButtonPrev_Click(object sender, EventArgs e)
             => PreviousToolStripMenuItem_Click(sender, e);
@@ -136,5 +144,9 @@ namespace AlbumMan
         {
             _program.NextPhoto();
         }
+
+        private void SaveAlbumToolStripMenuItem_Click(object sender, EventArgs e)
+            => _program.SaveAlbum();
+
     }
 }

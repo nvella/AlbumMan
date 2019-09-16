@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
+using AlbumMan.DocumentModels;
 
 namespace AlbumMan
 {
@@ -14,6 +15,9 @@ namespace AlbumMan
         public string ImagePath { get; private set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public List<string> Tags { get; set; }
+        public DateTime Date { get; set; }
+
         public bool Marked { get; set; }
 
         private Image _image = null;
@@ -29,6 +33,26 @@ namespace AlbumMan
         {
             ImagePath = path;
             Title = Path.GetFileName(path);
+        }
+
+        public PhotoModel ToPhotoModel() =>
+            new PhotoModel()
+            {
+                Title = Title,
+                Description = Description,
+                Marked = Marked ? "yes" : "no",
+                Date = Date,
+                Tags = Tags,
+                FileName = Path.GetFileName(ImagePath)
+            };
+
+        public void LoadFromPhotoModel(PhotoModel model)
+        {
+            Title = model.Title;
+            Description = model.Description;
+            Marked = model.Marked.ToLower() == "yes" || model.Marked.ToLower() == "true";
+            Date = model.Date;
+            Tags = model.Tags;
         }
 
         public static Photo LoadFromPath(string photoPath)
