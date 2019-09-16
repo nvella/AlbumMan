@@ -93,6 +93,20 @@ namespace AlbumMan
             MessageBox.Show("Album saved.", $"{PRODUCT_NAME}", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public void OpenProperties()
+        {
+            var dialog = new AlbumPropertiesDialog();
+            dialog.LoadFromAlbum(CurrentAlbum);
+
+            dialog.ShowDialog();
+
+            if (dialog.DialogResult == DialogResult.OK)
+            {
+                dialog.SaveToAlbum(CurrentAlbum);
+                _mainForm.HandleAlbumChange(CurrentAlbum);
+            }
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

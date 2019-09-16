@@ -77,7 +77,6 @@ namespace AlbumMan
 
             Text = (PhotoInstance.Marked ? "*" : "") + PhotoInstance.Title;
             ForeColor = PhotoInstance.Marked ? Color.DarkGreen : SystemColors.ControlText;
-            SubItems.Add(PhotoInstance.Description);
         }
     }
 }

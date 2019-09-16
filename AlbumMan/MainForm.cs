@@ -148,5 +148,12 @@ namespace AlbumMan
         private void SaveAlbumToolStripMenuItem_Click(object sender, EventArgs e)
             => _program.SaveAlbum();
 
+        private void ListBoxPhotos_Resize(object sender, EventArgs e)
+        {
+            listBoxPhotos.Columns[0].Width = listBoxPhotos.Width - 16;
+        }
+
+        private void ToolStripMenuItemPropeties_Click(object sender, EventArgs e)
+            => _program.OpenProperties();
     }
 }
