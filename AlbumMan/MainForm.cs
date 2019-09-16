@@ -155,5 +155,8 @@ namespace AlbumMan
 
         private void ToolStripMenuItemPropeties_Click(object sender, EventArgs e)
             => _program.OpenProperties();
+
+        private void ToolStripButtonProperties_Click(object sender, EventArgs e)
+            => ToolStripMenuItemPropeties_Click(sender, e);
     }
 }

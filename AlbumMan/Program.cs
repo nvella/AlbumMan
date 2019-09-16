@@ -95,6 +95,13 @@ namespace AlbumMan
 
         public void OpenProperties()
         {
+            // Don't open dialog if no album open
+            if(CurrentAlbum == null)
+            {
+                MessageBox.Show("No album open.", PRODUCT_NAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var dialog = new AlbumPropertiesDialog();
             dialog.LoadFromAlbum(CurrentAlbum);
 
